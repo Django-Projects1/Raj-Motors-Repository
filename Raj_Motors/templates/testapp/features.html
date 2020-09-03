@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+<h1 id="h1" align='center'> {{motors.V_model }} Features  Are</h1>
+<table style="float:left">
+  <h3>{{motors.V_model}}: key Fearure</h3>
+  {%for key in Key_feature_all%}
+  <tr>
+    <td>Mf Battery</td>
+    <td>{{key.Mf_battery}}</td>
+  </tr>
+  <tr>
+    <td>Broader Rear Grip</td>
+    <td>{{key.Broader_rear_grip}}</td>
+  </tr>
+  <tr>
+    <td>Aerodynamic Styling</td>
+    <td>{{key.Aerodynamic_styling}}</td>
+  </tr>
+  <tr>
+    <td>Reflector Headlight</td>
+    <td>{{key.Reflector_headlight}}</td>
+  </tr>
+  <tr>
+    <td>AHO Headlight</td>
+    <td>{{key.AHO_headlight}}</td>
+  </tr>
+  {%endfor%}
+</table>
+<table>
+  <h3>{{motors.V_model}}: Standard Fearure</h3>
+  {%for key in Standard_feature_all%}
+  <tr>
+    <td>Speedometer</td>
+    <td>{{key.Speedometer}}</td>
+  </tr>
+  <tr>
+    <td>Tachometer</td>
+    <td>{{key.Tachometer}}</td>
+  </tr>
+  <tr>
+    <td>Gear Indicator</td>
+    <td>{{key.Gear_indicator}}</td>
+  </tr>
+  <tr>
+    <td>Fuel Warning Indicator</td>
+    <td>{{key.Fuel_warning_indicator}}</td>
+  </tr>
+  <tr>
+    <td>Fuel Gauge</td>
+    <td>{{key.Fuel_gauge}}</td>
+  </tr>
+  <tr>
+    <td>Low Oil Indicator</td>
+    <td>{{key.Low_oil_indicator}}</td>
+  </tr>
+  <tr>
+    <td>Low Battery Indicator</td>
+    <td>{{key.Low_battery_indicator}}</td>
+  </tr>
+  <tr>
+    <td>Pillion Seat</td>
+    <td>{{key.Pillion_seat}}</td>
+  </tr>
+  <tr>
+    <td>Pillion Grabrail</td>
+    <td>{{key.Pillion_grabrail}}</td>
+  </tr>
+  <tr>
+    <td>Engine Kill Switch</td>
+    <td>{{key.Engine_kill_switch}}</td>
+  </tr>
+  <tr>
+    <td>Clock</td>
+    <td>{{key.Clock}}</td>
+  </tr>
+  <tr>
+    <td>Tripmeter Type</td>
+    <td>{kay.Tripmeter_type}</td>
+  </tr>
+  <tr>
+    <td>Tripmeter Count</td>
+    <td>{{key.Tripmeter_count}}</td>
+  </tr>
+  <tr>
+    <td>Pass Light</td>
+    <td>{{key.Pass_light}}</td>
+  </tr>
+  {%endfor%}
+
+</table>
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/variants/{{motors.id}}" class="btn btn-info" >Variants</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/specifications/{{motors.id}}" class="btn  btn-info">Specifications</a>
+ <br><br>
+<a href="/send_mail" class="btn btn-primary btn-success"  class="mail">Send Mail</a> <hr>
+{%endblock%}

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+{%for variant in Variants_data%}
+<h3>{{variant.Ex_showroom_price}}</h3>
+<h3>{{variant.Engine_cc}}</h3>
+
+{%endfor%}
+
+{%endblock%}

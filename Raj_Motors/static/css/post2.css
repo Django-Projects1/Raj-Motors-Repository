@@ -1,0 +1,29 @@
+#a{
+  font-size: 20px;
+  font-style: oblique;
+}
+h3{
+  color: green;
+}
+#cm{
+  font-size: 20px;
+  color: blue;
+}
+.cb{
+  color: green;
+}
+#h2{
+  color: red;
+}
+hr{
+  border: 1px solid blue;
+}
+#tr1{
+  font-size:20px;
+  color: #9707f7;
+}
+#tdb{
+  color: purple;
+  font-size: 20px;
+  font-style:italic;
+}

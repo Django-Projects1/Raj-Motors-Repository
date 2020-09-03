@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+{%if sent%}
+  <h2>Email Sent By {{fm.Name}} Successfully</h2>
+{%else%}
+
+<h1>Share Your Booking Informations</h1>
+<form  method="POST">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" class="btn btn-primary btn-success" value="Send Mail">
+</form>
+{%endif%}
+{%endblock%}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+<div class="container" align='center'>
+  <h2>Log In To Your Raj Motors Account</h2>
+  <form  method="POST">
+    {{form.as_p}}
+    {%csrf_token%}
+  <button type="submit" class="btn btn-primary btn-success">Login</button>
+  </form>
+</div>
+
+{%endblock%}

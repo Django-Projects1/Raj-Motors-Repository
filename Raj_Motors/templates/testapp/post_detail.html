@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+
+{% block content%}
+<h1 align='center' id="h1">{{motors.V_model}} Informations Are</h1>
+<table>
+  <tr id="tr1">
+    <td>Vehicle Model</td>
+    <td>Variants</td>
+    <td>Ex-Showroom Price</td>
+    <td>Insurance 1+5 Year TP</td>
+    <td>RTO</td>
+    <td>Good Life Card</td>
+    <td>Acc.+Hel.</td>
+    <td>On Road</td>
+  </tr>
+  <tr>
+    <td>{{motors.V_model}}</td>
+    <td>{{motors.variant}}</td>
+    <td>{{motors.Ex_showroom_price}}</td>
+    <td>{{motors.insurance_Tp}}</td>
+    <td>{{motors.RTO}}</td>
+    <td>{{motors.Gl}}</td>
+    <td>{{motors.Acc_hel}}</td>
+    <td>{{motors.on_road}}</td>
+  </tr>
+
+</table>
+    <p>{{motors.body}}</p>
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/variants/{{motors.id}}" class="btn btn-info" >Variants</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/specifications/{{motors.id}}" class="btn  btn-info">Specifications</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="/features/{{motors.id}}" class="btn  btn-info">Features</a> <br><br>
+<a href="/send_mail" class="btn btn-primary btn-success" align='center' class="mail">Send Mail</a> <hr>
+
+{% with comments_all.count as comments_count%}
+      <h2 id="h2">{{comments_count}} Comment{{comments_count|pluralize}}</h2>
+{%endwith%}
+ {%if comments_all%}
+        {% for comment in comments_all%}
+          <p id="cm"> Comment {{forloop.counter}} By {{comment.name}} On {{comment.created}}</p>
+          <div class="cb">
+            {{comment.comments|linebreaks}}
+          </div>
+        {%endfor%}
+  {%else%}
+    <p>There Is No Comments Yet...</p>
+  {%endif%}
+    {% if c_commit%}
+        <h2>Thanks For Adding Comments!!!</h2>
+    {%else%}
+        <h2>You Can Submit Your Comments!!!</h2>
+          <form method="POST">
+                {{form.as_p}}
+                {%csrf_token%}
+              <input type="submit" class="btn btn-success btn-lg" value="submit comment">
+            </form>
+
+      {%endif%}
+{%endblock%}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+{%for part in parts_data%}
+ <table>
+   <tr>
+     <td><img src="{{part.parts_img.url}}" alt="" style="width: 250px;height: 250px; ">Name:<br>
+       <a href="/other/{{part.id}}" >{{part.parts_name}}</a> ,<a href="/hel_floorinfos/{{part.id}}"> Details</a> </td>
+       <td id='tdb'>{{part.parts_body}}</td>
+   </tr>
+ </table>
+
+{%endfor%}
+{%endblock%}

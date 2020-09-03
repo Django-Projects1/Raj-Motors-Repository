@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+
+<div class="container" align='center'>
+  {%ifequal Emi None%}
+    <form method="post">
+      {{form.as_p}}
+      {%csrf_token%}
+      <input type="submit" class="btn btn-success" value="Calculate">
+    </form>
+  {%else%}
+  <h1 id="h1" align='center'>{{motors.V_model}} Emi Calculattion!!!</h1>
+     <h3>Total Payment (Principle + Interest)::{{Total_payment}}</h3><br>
+     <h3>Total Interest Payable::{{Total_interest}}</h3><br>
+     <h3>Your EMI will be per month::{{Emi}}</h3>
+  {%endifequal%}
+</div>
+<a href="/" class="btn btn-primary"> Go Back</a>
+{%endblock%}

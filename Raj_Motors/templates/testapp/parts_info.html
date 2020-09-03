@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+{%for info in infos%}
+ <table>
+   <tr>
+     <td> <h2>Description </h2><br><br>{{info.Description}}</td>
+     <td><h2>Applicable Models</h2> <br><br>{{info.Applicable}}</td>
+     <td> <h2>Specifications</h2><br> <br>{{info.sp1}}<br>
+       {{info.sp2}}<br>
+       {{info.sp3}}<br>
+       {{info.sp4}}<br>
+       {{info.sp5}}<br>
+
+     </td>
+   </tr>
+ </table>
+
+{%endfor%}
+{%endblock%}

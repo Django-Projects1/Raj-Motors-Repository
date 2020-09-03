@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+{%if others%}
+{%for other in others%}
+
+ <table>
+   <tr>
+     <td><img src="{{other.img.url}}" alt="" style="width: 250px;height: 250px; ">Name:<br>
+       <a href="/info/{{other.id}}" >{{other.name}}</a></td>
+       <td><a href="/info/{{other.id}}">Details</a></td>
+   </tr>
+ </table>
+
+{%endfor%}
+{%else%}
+   <h2 id='h2'>Go TO Side Link</h2>
+{%endif%}
+{%endblock%}

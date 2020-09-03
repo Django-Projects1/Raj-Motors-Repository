@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+<h1 align='center' id=h1>{{motors.V_model}} Variants Are!!!</h1><br><br>
+<div class="contrib" align='center'>
+  {%for variant in variants%}
+  <h3> {{variant.var1}}</h3><br>
+  <h3>{{variant.var2}}</h3><br>
+  <h3>{{variant.var3}}</h3><br>
+  <h3>{{variant.var4}}</h3><br>
+  <h3>{{variant.bike5}}</h3><br>
+  {%endfor%}
+</div>
+<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/features/{{motors.id}}" class="btn btn-info" >Features</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/specifications/{{motors.id}}" class="btn  btn-info">Specifications</a>
+ <br><br>
+<a href="/send_mail" class="btn btn-primary btn-success" >Send Mail</a> <hr>
+
+{%endblock%}

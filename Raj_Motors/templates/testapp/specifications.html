@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+<h1 id="h1" align='center'> {{motors.V_model }} Specifications  Are</h1>
+<table style="float:left">
+  <h3> {{motors.V_model}}: Engine</h3>
+  {%for engine in Engine_all%}
+  <tr>
+    <td>Engine CC</td>
+    <td>{{engine.Engine_cc}}</td>
+  </tr>
+  <tr>
+    <td>No Of Cylinder</td>
+    <td>{{engine.No_of_cylinder}}</td>
+  </tr>
+  <tr>
+    <td>Max Power</td>
+    <td>{{engine.Max_Power}</td>
+  </tr>
+  <tr>
+    <td>Max Torque</td>
+    <td>{{engine.max_torque}</td>
+  </tr>
+  <tr>
+    <td>Valves_Per_Cylinder</td>
+    <td>{{engine.valves_per_cylinder}</td>
+  </tr>
+  <tr>
+    <td>Fuel_Delivery</td>
+    <td>{{engine.fuel_Delivery}</td>
+  </tr>
+  <tr>
+    <td>Cooling_System</td>
+    <td>{{engine.Cooling_system}</td>
+  </tr>
+  <tr>
+    <td>Starting_Mechanism</td>
+    <td>{{engine.Starting_mechanism}</td>
+  </tr>
+</table>
+{%endfor%}
+<table style="float:left">
+  <h3>{{motors.V_model}}: Dimension Weight</h3>
+  {%for d_w in Dimension_weight_all%}
+  <tr>
+    <td>kerb Weight</td>
+    <td>{{d_w.kerb_weight}}</td>
+  </tr>
+    <tr>
+      <td>Length</td>
+      <td>{{d_w.length}}</td>
+    </tr>
+    <tr>
+      <td>Width</td>
+      <td>{{d_w.width}}</td>
+    </tr>
+    <tr>
+      <td>Height</td>
+      <td>{{d_w.height}}</td>
+    </tr>
+  <tr>
+    <td>Wheelbase</td>
+    <td>{{d_w.wheelbase}}</td>
+  </tr>
+  <tr>
+    <td>Ground Clearance</td>
+    <td>{{d_w.Ground_clearance}}</td>
+  </tr>
+  <tr>
+    <td>Seat Height</td>
+    <td>{{d_w.Seat_height}}</td>
+  </tr>
+</table>
+{%endfor%}
+<table>
+  <h3>{{motors.V_model}}: Wheel Tyres </h3>
+  {%for w_t in Wheel_tyres_all %}
+  <tr>
+    <td> Wheel Size</td>
+    <td>{{w_t.Wheel_size}}</td>
+  </tr>
+  <tr>
+    <td> Wheel Type</td>
+    <td>{{w_t.Wheel_type}}</td>
+  </tr>
+  <tr>
+    <td> Front Tyre</td>
+    <td>{{w_t.Wheel_size}}</td>
+  </tr>
+  <tr>
+    <td>Rear Tyre</td>
+    <td>{{w_t.Wheel_size}}</td>
+  </tr>
+</table>
+{%endfor%}
+
+<table style="float:left">
+  <h3>{{motors.V_model}}: Electricals</h3>
+  {%for elec in Electricals_all%}
+  <tr>
+    <td>Battery</td>
+    <td>{{elec.Battery}}</td>
+  </tr>
+  <tr>
+    <td>Headlight</td>
+    <td>{{elec.Headlight}}</td>
+  </tr>
+  <tr>
+    <td>Tail Light</td>
+    <td>{{elec.Tail_light}}</td>
+  </tr>
+  {%endfor%}
+</table>
+<table>
+  <h3>{{motors.V_model}}: Transmission</h3>
+    {%for trans in Transmission_all %}
+  <tr>
+    <td>No Of Gear</td>
+    <td>{{trans.No_of_gear}}</td>
+  </tr>
+  <tr>
+    <td> Clutch</td>
+    <td>{{trans.Clutch}}</td>
+  </tr>
+  {%endfor%}
+</table>
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/variants/{{motors.id}}" class="btn btn-info" >Variants</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="/features/{{motors.id}}" class="btn  btn-info">Features</a> <br><br>
+<a href="/send_mail" class="btn btn-primary btn-success" align='center' >Send Mail</a> <hr>
+
+{%endblock%}

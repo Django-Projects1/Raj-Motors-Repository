@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block content%}
+<div class="container" align='center'>
+  <form  method="POST">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" class=" btn btn-primary " value="Submit">
+  </form>
+</div>
+
+{%endblock%}
